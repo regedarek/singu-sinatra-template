@@ -2,7 +2,8 @@ source 'https://rubygems.org'
 ruby '2.1.2'
 
 gem 'sinatra', require: 'sinatra/base'
-gem 'dotenv' # environment variables
+
+gem 'dotenv'            # environment variables
 gem 'rake', '~> 10.3'
 
 # DB
@@ -12,6 +13,9 @@ gem 'sqlite3'
 <%= @gems.collect{|gem| "gem '#{gem}'"}.compact.join("\n") %>
 <% end %>
 group :development do
-  gem 'thin'   #server
-  gem 'byebug' #debugging
+  gem 'oauth2'          # oauth2 wrapper
+  gem 'thin'            # server
+  gem 'tux'             # console
+  gem 'rerun'           # console
+  gem 'pry-byebug'      # debugging
 end
